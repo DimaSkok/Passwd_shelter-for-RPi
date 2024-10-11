@@ -193,7 +193,7 @@ def program_check ():
                                             time.sleep(0.2)
                                             while True:
                                                 if keyboard(): continue
-                                                print('Length of password - ' + str(num))
+
                                                 time.sleep(0.2)
                                                 if keyboard_d[2]:
                                                     num += 1
@@ -201,7 +201,8 @@ def program_check ():
                                                 elif keyboard_d[0]:
                                                     num -= 1
                                                     continue
-                                                elif keyboard_d[1]:
+                                                print('Length of password - ' + str(num))
+                                                if keyboard_d[1]:
                                                     data = data_dump_ll
                                                     flag = True
                                                     break
