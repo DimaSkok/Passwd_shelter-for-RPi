@@ -143,6 +143,8 @@ def program_check ():
                     i += 1
                     if name == ['', '']: break
                     cheker += 1
+                name = reader(data)[0]
+                print(name)
                 time.sleep(0.2)
                 while True:
                     if keyboard(): continue
@@ -276,6 +278,8 @@ def program_delete():
                     i += 1
                     if name == ['', '']: break
                     cheker += 1
+                name = reader(data)[0]
+                print(name)
                 time.sleep(0.2)
                 while True:
                     if keyboard(): continue
