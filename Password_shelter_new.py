@@ -127,7 +127,7 @@ def program_check ():
         if data == 4: data = 2
         if data == 1: data = 3
 
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         if data == 2:
 
@@ -216,7 +216,7 @@ def program_add():
         if data == 4: data = 1
         if data == 0: data = 3
 
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         if data == 1:
             print('Generate password')
@@ -252,7 +252,7 @@ def program_delete():
         if data == 4: data = 2
         if data == 1: data = 3
 
-        time.sleep(0.2)
+        time.sleep(0.5)
 
         if data == 2:
             print('Delete passwords?')
@@ -328,7 +328,7 @@ while True:
         if keyboard_d[1]:
             starter(data)
 
-        time.sleep(0.2)
+        time.sleep(0.5)
         print(info[data])
 
 
