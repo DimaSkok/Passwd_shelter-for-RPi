@@ -194,6 +194,7 @@ def program_check ():
                                             while True:
                                                 if keyboard(): continue
                                                 print('Length of password - ' + str(num))
+                                                time.sleep(0.2)
                                                 if keyboard_d[2]:
                                                     num += 1
                                                     continue
@@ -209,9 +210,9 @@ def program_check ():
                                             deliter(data)
 
 
-                                        elif keyboard_d[0] or keyboard_d[2] or flag:
+                                        if keyboard_d[0] or keyboard_d[2] or flag:
                                             break
-                                elif keyboard_d[0] or keyboard_d[2] or flag:
+                                if keyboard_d[0] or keyboard_d[2] or flag:
                                     break
 
         if data == 1:
