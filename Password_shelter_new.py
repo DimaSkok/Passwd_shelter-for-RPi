@@ -160,6 +160,8 @@ def program_check ():
                         print('Exit?')
                         if keyboard_d[1]:
                             data = data_dump_l
+                            time.sleep(0.2)
+                            print('Check passwords?')
                             break
                     if data == cheker:
                         print('Check "RAM"?')
@@ -294,6 +296,8 @@ def program_delete():
                     if data == cheker:
                         print('Exit?')
                         if keyboard_d[1]:
+                            print('Delete passwords?')
+                            time.sleep(0.2)
                             break
 
                     if data != cheker:
@@ -305,7 +309,7 @@ def program_delete():
                             if button == 'I KNOW WHAT I AM DOING':
                                 ram_passwords = reader(data)
                                 deliter(data)
-                                print('Удаление успешно')
+                                print('Deleted success')
                                 data = data_dump_l
                                 break
                             else:
