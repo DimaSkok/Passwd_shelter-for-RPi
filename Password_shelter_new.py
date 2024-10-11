@@ -169,28 +169,31 @@ def program_check ():
                             print(ram_passwords[0], '\n', ram_passwords[1], sep='')
                             continue
 
-                    if data != cheker and data != (cheker + 1):
+                    if data != (cheker + 2) and data != (cheker + 1):
                         name = reader(data)[0]
                         passwd = reader(data)[1]
                         print(name)
 
                         if keyboard_d[1]:
                             print(passwd)
+                            time.sleep(0.2)
                             while True:
                                 flag = False
+                                if keyboard(): continue
                                 if keyboard_d[1]:
                                     print('You really want change password?')
+                                    time.sleep(0.2)
                                     while True:
+                                        if keyboard(): continue
                                         if keyboard_d[1]:
                                             num = len(passwd)
                                             data_dump_ll = data
                                             data = 0
-
+                                            print('Length of password - ' + str(num))
+                                            time.sleep(0.2)
                                             while True:
-                                                print('Length of password - ' + str(num))
-
                                                 if keyboard(): continue
-
+                                                print('Length of password - ' + str(num))
                                                 if keyboard_d[2]:
                                                     num += 1
                                                     continue
