@@ -92,19 +92,21 @@ def deliter (num):
 
 def keyboard ():
     global data
-    if keyboard_d[0] == False and keyboard_d[1] == False and keyboard_d[2] == False:
-        return True
-    elif gp.input(5):
+    if gp.input(5):
         keyboard_d[0] = True
         data -= 1
+        return False
     elif gp.input(26):
         keyboard_d[2] = True
         data += 1
+        return False
     elif gp.input(6):
         keyboard_d[1] = True
+        return False
     else:
         for i in range(3):
             keyboard_d[i] = False
+    return True
 
 def starter (num):
     if num == 0: program_check()
@@ -299,6 +301,12 @@ def program_Exit():
 
 while True:
 
+    if keyboard(): continue
+
+    # print(data)
+    if data == 5: data = 0
+    if data == -1: data = 4
+
     if keyboard_d[1]:
         starter(data)
     else:
@@ -308,8 +316,3 @@ while True:
     if exiter:
         break
 
-    if keyboard(): continue
-
-    # print(data)
-    if data == 5: data = 0
-    if data == -1: data = 4
