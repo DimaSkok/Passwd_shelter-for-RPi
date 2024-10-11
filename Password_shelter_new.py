@@ -163,8 +163,8 @@ def program_check ():
                                 print(ram_passwords[0], '\n', ram_passwords[1], sep='')
                                 continue
 
-                        name = reader(number)[0]
-                        passwd = reader(number)[1]
+                        name = reader(data)[0]
+                        passwd = reader(data)[1]
                         print(name)
 
                         if keyboard_d[1]:
@@ -192,7 +192,7 @@ def program_check ():
                                             break
                                     ram_passwords = [name, passwd]
                                     writer(name, pass_gener(num, 1)[0])
-                                    deliter(number)
+                                    deliter(data)
 
 
                                 elif keyboard_d[0] or keyboard_d[2]:
