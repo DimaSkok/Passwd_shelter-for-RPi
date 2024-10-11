@@ -300,10 +300,11 @@ def program_Exit():
 #--------------------------------------------------
 
 while True:
+    print(info[data])
     while True:
 
         if keyboard():
-            break
+            continue
 
         else:
             # print(data)
@@ -312,8 +313,6 @@ while True:
 
             if keyboard_d[1]:
                 starter(data)
-            else:
-                print(info(data))
 
             if exiter:
                 break
