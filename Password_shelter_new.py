@@ -151,23 +151,23 @@ def program_check ():
 
                     time.sleep(0.2)
 
-                    if data == cheker + 1:
+                    if data == cheker + 2:
                         data = 0
                     if data == -1:
-                        data = cheker
+                        data = cheker + 1
 
-                    if data == cheker:
+                    if data == cheker + 1:
                         print('Exit?')
                         if keyboard_d[1]:
                             data = data_dump_l
                             break
-                    if data == cheker - 1:
+                    if data == cheker:
                         print('Check "RAM"?')
                         if keyboard_d[1]:
                             print(ram_passwords[0], '\n', ram_passwords[1], sep='')
                             continue
 
-                    if data != cheker and data != (cheker - 1):
+                    if data != cheker and data != (cheker + 1):
                         name = reader(data)[0]
                         passwd = reader(data)[1]
                         print(name)
