@@ -176,39 +176,40 @@ def program_check ():
 
                         if keyboard_d[1]:
                             print(passwd)
-                            if keyboard_d[1]:
-                                print('You really want change password?')
+                            while True:
+                                flag = False
                                 if keyboard_d[1]:
-                                    num = len(passwd)
-                                    data_dump_ll = data
-                                    data = 0
-
+                                    print('You really want change password?')
                                     while True:
-                                        print('Длина пароля - ' + str(num))
+                                        if keyboard_d[1]:
+                                            num = len(passwd)
+                                            data_dump_ll = data
+                                            data = 0
 
-                                        if keyboard(): continue
+                                            while True:
+                                                print('Length of password - ' + str(num))
 
-                                        if keyboard_d[2]:
-                                            num += 1
-                                            continue
-                                        elif keyboard_d[0]:
-                                            num -= 1
-                                            continue
-                                        elif keyboard_d[1]:
-                                            data = data_dump_ll
+                                                if keyboard(): continue
+
+                                                if keyboard_d[2]:
+                                                    num += 1
+                                                    continue
+                                                elif keyboard_d[0]:
+                                                    num -= 1
+                                                    continue
+                                                elif keyboard_d[1]:
+                                                    data = data_dump_ll
+                                                    flag = True
+                                                    break
+                                            ram_passwords = [name, passwd]
+                                            writer(name, pass_gener(num, 1)[0])
+                                            deliter(data)
+
+
+                                        elif keyboard_d[0] or keyboard_d[2] or flag:
                                             break
-                                    ram_passwords = [name, passwd]
-                                    writer(name, pass_gener(num, 1)[0])
-                                    deliter(data)
-
-
-                                elif keyboard_d[0] or keyboard_d[2]:
-                                    continue
-                            elif keyboard_d[0] or keyboard_d[2]:
-                                continue
-
-
-
+                                elif keyboard_d[0] or keyboard_d[2] or flag:
+                                    break
 
         if data == 1:
             print('Exit?')
