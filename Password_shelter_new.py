@@ -320,6 +320,8 @@ def program_delete():
                                 deliter(data)
                                 print('Deleted success')
                                 data = data_dump_l
+                                print('Delete passwords?')
+                                time.sleep(0.2)
                                 break
                             else:
                                 continue
