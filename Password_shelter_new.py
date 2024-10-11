@@ -301,7 +301,8 @@ def program_Exit():
 
 while True:
 
-    if keyboard(): continue
+    if keyboard():
+        continue
 
     # print(data)
     if data == 5: data = 0
