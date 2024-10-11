@@ -312,7 +312,7 @@ while True:
         if data == 5: data = 0
         if data == -1: data = 4
 
-        time.sleep(0.5)
+        time.sleep(0.2)
         print(info[data])
 
         if keyboard_d[1]:
