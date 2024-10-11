@@ -299,13 +299,6 @@ def program_Exit():
 
 while True:
 
-    if keyboard(): continue
-
-    # print(data)
-    if data == 5: data = 0
-    if data == -1: data = 4
-
-
     if keyboard_d[1]:
         starter(data)
     else:
@@ -314,3 +307,9 @@ while True:
 
     if exiter:
         break
+
+    if keyboard(): continue
+
+    # print(data)
+    if data == 5: data = 0
+    if data == -1: data = 4
