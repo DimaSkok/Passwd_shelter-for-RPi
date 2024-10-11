@@ -121,7 +121,7 @@ def program_check ():
     # отвечает за просмотр, перезапись паролей
     global ram_passwords, data
     data_dump = data
-    print('Check passwords?')
+
     time.sleep(0.2)
     while True:
         if keyboard(): continue
@@ -215,7 +215,7 @@ def program_add():
     # отвечает за вбивание новых паролей, нужна клава
     global data
     data_dump = data
-    print('Generate password')
+    
     time.sleep(0.2)
     while True:
         if keyboard(): continue
@@ -252,7 +252,7 @@ def program_delete():
     # отвечает за удаление паролей, нужна клава
     global ram_passwords, data
     data_dump = data
-    print('Delete passwords?')
+
     time.sleep(0.2)
     while True:
         if keyboard(): continue
