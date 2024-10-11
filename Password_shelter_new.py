@@ -211,9 +211,10 @@ def program_check ():
                                             ram_passwords = [name, passwd]
                                             writer(name, pass_gener(num, 1)[0])
                                             deliter(data)
-
+                                            flag = True
 
                                         if keyboard_d[0] or keyboard_d[2] or flag:
+                                            flag = True
                                             break
                                 if keyboard_d[0] or keyboard_d[2] or flag:
                                     break
