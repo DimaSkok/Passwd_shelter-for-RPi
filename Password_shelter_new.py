@@ -300,20 +300,21 @@ def program_Exit():
 #--------------------------------------------------
 
 while True:
+    while True:
 
-    if keyboard():
-        continue
+        if keyboard():
+            break
 
-    # print(data)
-    if data == 5: data = 0
-    if data == -1: data = 4
+        # print(data)
+        if data == 5: data = 0
+        if data == -1: data = 4
 
-    if keyboard_d[1]:
-        starter(data)
-    else:
-        print(info(data))
+        if keyboard_d[1]:
+            starter(data)
+        else:
+            print(info(data))
 
-
+        if exiter:
+            break
     if exiter:
         break
-
