@@ -131,78 +131,78 @@ def program_check ():
         time.sleep(0.2)
 
         if data == 2:
+            print('Check passwords?')
+            if keyboard_d[1]:
+                data_dump_l = data
+                data = 0
+                cheker = 0
+                i = 0
+                while True:
+                    name = reader(i)
+                    i += 1
+                    if name == ['', '']: break
+                    cheker += 1
+                time.sleep(0.2)
+                while True:
+                    if keyboard(): continue
 
-            if data == 2:
-                print('Check passwords?')
-                if keyboard_d[1]:
-                    data_dump_l = data
-                    data = 0
-                    cheker = 0
-                    i = 0
-                    while True:
-                        name = reader(i)
-                        i += 1
-                        if name == ['', '']: break
-                        cheker += 1
                     time.sleep(0.2)
-                    while True:
-                        if keyboard(): continue
 
-                        time.sleep(0.2)
+                    if data == cheker + 1:
+                        data = 0
+                    if data == -1:
+                        data = cheker
 
-                        if data == cheker + 1:
-                            data = 0
-                        if data == -1:
-                            data = cheker
+                    if data == cheker:
+                        print('Exit?')
+                        if keyboard_d[1]:
+                            data = data_dump_l
+                            break
+                    if data == cheker - 1:
+                        print('Check "RAM"?')
+                        if keyboard_d[1]:
+                            print(ram_passwords[0], '\n', ram_passwords[1], sep='')
+                            continue
 
-                        if data == cheker:
-                            print('Exit?')
+                    if data != cheker and data != (cheker - 1):
+                        name = reader(data)[0]
+                        passwd = reader(data)[1]
+                        print(name)
+
+                        if keyboard_d[1]:
+                            print(passwd)
                             if keyboard_d[1]:
-                                data = data_dump_l
-                                break
-                        if data == cheker - 1:
-                            print('Check "RAM"?')
-                            if keyboard_d[1]:
-                                print(ram_passwords[0], '\n', ram_passwords[1], sep='')
-                                continue
-
-                        if data != cheker and data != (cheker - 1):
-                            name = reader(data)[0]
-                            passwd = reader(data)[1]
-                            print(name)
-
-                            if keyboard_d[1]:
-                                print(passwd)
+                                print('You really want change password?')
                                 if keyboard_d[1]:
-                                    print('You really want change password?')
-                                    if keyboard_d[1]:
-                                        num = len(passwd)
-                                        data_dump_ll = data
-                                        data = 0
+                                    num = len(passwd)
+                                    data_dump_ll = data
+                                    data = 0
 
-                                        while True:
-                                            print('Длина пароля - ' + str(num))
+                                    while True:
+                                        print('Длина пароля - ' + str(num))
 
-                                            if keyboard(): continue
+                                        if keyboard(): continue
 
-                                            if keyboard_d[2]:
-                                                num += 1
-                                                continue
-                                            elif keyboard_d[0]:
-                                                num -= 1
-                                                continue
-                                            elif keyboard_d[1]:
-                                                data = data_dump_ll
-                                                break
-                                        ram_passwords = [name, passwd]
-                                        writer(name, pass_gener(num, 1)[0])
-                                        deliter(data)
+                                        if keyboard_d[2]:
+                                            num += 1
+                                            continue
+                                        elif keyboard_d[0]:
+                                            num -= 1
+                                            continue
+                                        elif keyboard_d[1]:
+                                            data = data_dump_ll
+                                            break
+                                    ram_passwords = [name, passwd]
+                                    writer(name, pass_gener(num, 1)[0])
+                                    deliter(data)
 
 
-                                    elif keyboard_d[0] or keyboard_d[2]:
-                                        continue
                                 elif keyboard_d[0] or keyboard_d[2]:
                                     continue
+                            elif keyboard_d[0] or keyboard_d[2]:
+                                continue
+
+
 
 
         if data == 3:
@@ -215,7 +215,7 @@ def program_add():
     # отвечает за вбивание новых паролей, нужна клава
     global data
     data_dump = data
-    
+
     time.sleep(0.2)
     while True:
         if keyboard(): continue
