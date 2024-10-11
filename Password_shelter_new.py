@@ -166,42 +166,43 @@ def program_check ():
                                 print(ram_passwords[0], '\n', ram_passwords[1], sep='')
                                 continue
 
-                        name = reader(data)[0]
-                        passwd = reader(data)[1]
-                        print(name)
+                        if data != cheker and data != (cheker - 1):
+                            name = reader(data)[0]
+                            passwd = reader(data)[1]
+                            print(name)
 
-                        if keyboard_d[1]:
-                            print(passwd)
                             if keyboard_d[1]:
-                                print('You really want change password?')
+                                print(passwd)
                                 if keyboard_d[1]:
-                                    num = len(passwd)
-                                    data_dump_ll = data
-                                    data = 0
+                                    print('You really want change password?')
+                                    if keyboard_d[1]:
+                                        num = len(passwd)
+                                        data_dump_ll = data
+                                        data = 0
 
-                                    while True:
-                                        print('Длина пароля - ' + str(num))
+                                        while True:
+                                            print('Длина пароля - ' + str(num))
 
-                                        if keyboard(): continue
+                                            if keyboard(): continue
 
-                                        if keyboard_d[2]:
-                                            num += 1
-                                            continue
-                                        elif keyboard_d[0]:
-                                            num -= 1
-                                            continue
-                                        elif keyboard_d[1]:
-                                            data = data_dump_ll
-                                            break
-                                    ram_passwords = [name, passwd]
-                                    writer(name, pass_gener(num, 1)[0])
-                                    deliter(data)
+                                            if keyboard_d[2]:
+                                                num += 1
+                                                continue
+                                            elif keyboard_d[0]:
+                                                num -= 1
+                                                continue
+                                            elif keyboard_d[1]:
+                                                data = data_dump_ll
+                                                break
+                                        ram_passwords = [name, passwd]
+                                        writer(name, pass_gener(num, 1)[0])
+                                        deliter(data)
 
 
+                                    elif keyboard_d[0] or keyboard_d[2]:
+                                        continue
                                 elif keyboard_d[0] or keyboard_d[2]:
                                     continue
-                            elif keyboard_d[0] or keyboard_d[2]:
-                                continue
 
 
         if data == 3:
@@ -288,20 +289,21 @@ def program_delete():
                         if keyboard_d[1]:
                             break
 
+                    if data != cheker:
+                        name = reader(data)[0]
+                        print(name)
 
-                    name = reader(data)[0]
-                    print(name)
+                        if keyboard_d[1]:
+                            button = input('Write: <I KNOW WHAT I AM DOING>\n')
+                            if button == 'I KNOW WHAT I AM DOING':
+                                ram_passwords = reader(data)
+                                deliter(data)
+                                print('Удаление успешно')
+                                data = data_dump_l
+                                break
+                            else:
+                                continue
 
-                    if keyboard_d[1]:
-                        button = input('Write: <I KNOW WHAT I AM DOING>\n')
-                        if button == 'I KNOW WHAT I AM DOING':
-                            ram_passwords = reader(data)
-                            deliter(data)
-                            print('Удаление успешно')
-                            data = data_dump_l
-                            break
-                        else:
-                            continue
 
         if data == 3:
             print('Exit?')
