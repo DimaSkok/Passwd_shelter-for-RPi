@@ -1,5 +1,6 @@
 import random as rand
 import RPi.GPIO as gp
+import time
 
 ram_passwords = ['0', '0']
 gp.setmode(gp.BCM)
@@ -300,6 +301,7 @@ def program_Exit():
 #--------------------------------------------------
 
 while True:
+    time.sleep(1)
     print(info[data])
     while True:
 
