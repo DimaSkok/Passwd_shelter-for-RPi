@@ -125,12 +125,12 @@ def program_check ():
     time.sleep(0.2)
     while True:
         if keyboard(): continue
-        if data == 4: data = 2
-        if data == 1: data = 3
+        if data == 2: data = 0
+        if data == -1: data = 1
 
         time.sleep(0.2)
 
-        if data == 2:
+        if data == 0:
             print('Check passwords?')
             if keyboard_d[1]:
                 data_dump_l = data
@@ -205,7 +205,7 @@ def program_check ():
 
 
 
-        if data == 3:
+        if data == 1:
             print('Exit?')
             if keyboard_d[1]:
                 data = data_dump
