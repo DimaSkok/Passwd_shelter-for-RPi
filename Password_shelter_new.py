@@ -106,7 +106,7 @@ def keyboard ():
     else:
         for i in range(3):
             keyboard_d[i] = False
-    return True
+            return True
 
 def starter (num):
     if num == 0: program_check()
