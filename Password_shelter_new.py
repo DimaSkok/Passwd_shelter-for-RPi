@@ -301,20 +301,18 @@ def program_Exit():
 
 while True:
     print(info[data])
-    while True:
+    if keyboard():
+        continue
 
-        if keyboard():
-            continue
+    else:
+        # print(data)
+        if data == 5: data = 0
+        if data == -1: data = 4
 
-        else:
-            # print(data)
-            if data == 5: data = 0
-            if data == -1: data = 4
+        if keyboard_d[1]:
+            starter(data)
 
-            if keyboard_d[1]:
-                starter(data)
+        if exiter:
+            break
 
-            if exiter:
-                break
-    if exiter:
-        break
+
