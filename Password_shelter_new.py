@@ -236,7 +236,7 @@ def program_add():
                 print('Password into app/site added')
                 data = data_dump
                 break
-        else:
+        if data == 3:
             print('Exit?')
             if keyboard_d[1]:
                 data = data_dump
@@ -294,7 +294,7 @@ def program_delete():
                         else:
                             continue
 
-        else:
+        if data == 3:
             print('Exit?')
             if keyboard_d[1]:
                 data = data_dump
