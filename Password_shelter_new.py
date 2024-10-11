@@ -300,24 +300,22 @@ def program_Exit():
     exiter = True
 #--------------------------------------------------
 
+
+print(info[data])
 while True:
-    time.sleep(1)
-    print(info[data])
-    while True:
+    if keyboard():
+        continue
 
-        if keyboard():
-            continue
+    else:
+        time.sleep(1)
+        print(info[data])
+        # print(data)
+        if data == 5: data = 0
+        if data == -1: data = 4
 
-        else:
-            # print(data)
-            if data == 5: data = 0
-            if data == -1: data = 4
+        if keyboard_d[1]:
+            starter(data)
 
-            if keyboard_d[1]:
-                starter(data)
-
-            if exiter:
-                break
-    if exiter:
-        break
+        if exiter:
+            break
 
