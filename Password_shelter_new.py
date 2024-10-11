@@ -122,12 +122,13 @@ def program_check ():
     global ram_passwords, data
     data_dump = data
     print('Check passwords?')
+    time.sleep(0.2)
     while True:
         if keyboard(): continue
         if data == 4: data = 2
         if data == 1: data = 3
 
-        time.sleep(0.5)
+        time.sleep(0.2)
 
         if data == 2:
 
@@ -211,12 +212,13 @@ def program_add():
     global data
     data_dump = data
     print('Generate password')
+    time.sleep(0.2)
     while True:
         if keyboard(): continue
         if data == 4: data = 1
         if data == 0: data = 3
 
-        time.sleep(0.5)
+        time.sleep(0.2)
 
         if data == 1:
             print('Generate password')
@@ -247,12 +249,13 @@ def program_delete():
     global ram_passwords, data
     data_dump = data
     print('Delete passwords?')
+    time.sleep(0.2)
     while True:
         if keyboard(): continue
         if data == 4: data = 2
         if data == 1: data = 3
 
-        time.sleep(0.5)
+        time.sleep(0.2)
 
         if data == 2:
             print('Delete passwords?')
@@ -328,7 +331,7 @@ while True:
         if keyboard_d[1]:
             starter(data)
 
-        time.sleep(0.5)
+        time.sleep(0.2)
         print(info[data])
 
 
