@@ -324,6 +324,8 @@ def program_delete():
                                 time.sleep(0.2)
                                 break
                             else:
+                                print(name)
+                                time.sleep(0.2)
                                 continue
 
 
