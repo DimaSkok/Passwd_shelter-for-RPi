@@ -144,8 +144,11 @@ def program_check ():
                         i += 1
                         if name == ['', '']: break
                         cheker += 1
+                    time.sleep(0.2)
                     while True:
                         if keyboard(): continue
+
+                        time.sleep(0.2)
 
                         if data == cheker + 1:
                             data = 0
@@ -158,7 +161,7 @@ def program_check ():
                                 data = data_dump_l
                                 break
                         if data == cheker - 1:
-                            print('Проверить ОЗУ?')
+                            print('Check "RAM"?')
                             if keyboard_d[1]:
                                 print(ram_passwords[0], '\n', ram_passwords[1], sep='')
                                 continue
@@ -269,8 +272,11 @@ def program_delete():
                     i += 1
                     if name == ['', '']: break
                     cheker += 1
+                time.sleep(0.2)
                 while True:
                     if keyboard(): continue
+
+                    time.sleep(0.2)
 
                     if data == cheker + 1:
                         data = 0
