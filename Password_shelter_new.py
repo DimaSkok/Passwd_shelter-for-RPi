@@ -17,6 +17,8 @@ gp.setup(5, gp.IN)
 gp.setup(6, gp.IN)
 gp.setup(26, gp.IN)
 
+# stop time before new button tap
+timer = 0.2
 
 #--------------------------------------------------
 def pass_gener(pass_lenth, pass_curr):
@@ -119,17 +121,17 @@ def starter (num):
 
 def program_check ():
     # отвечает за просмотр, перезапись паролей
-    global ram_passwords, data
+    global ram_passwords, data, timer
     data_dump = data
     print('Check passwords?')
     data = 0
-    time.sleep(0.2)
+    time.sleep(timer)
     while True:
         if keyboard(): continue
         if data == 2: data = 0
         if data == -1: data = 1
 
-        time.sleep(0.2)
+        time.sleep(timer)
 
         if data == 0:
             print('Check passwords?')
@@ -145,11 +147,11 @@ def program_check ():
                     cheker += 1
                 name = reader(data)[0]
                 print(name)
-                time.sleep(0.2)
+                time.sleep(timer)
                 while True:
                     if keyboard(): continue
 
-                    time.sleep(0.2)
+                    time.sleep(timer)
 
                     if data == cheker + 2:
                         data = 0
@@ -160,7 +162,7 @@ def program_check ():
                         print('Exit?')
                         if keyboard_d[1]:
                             data = data_dump_l
-                            time.sleep(0.2)
+                            time.sleep(timer)
                             print('Check passwords?')
                             break
                     if data == cheker:
@@ -176,13 +178,13 @@ def program_check ():
 
                         if keyboard_d[1]:
                             print(passwd)
-                            time.sleep(0.2)
+                            time.sleep(timer)
                             while True:
                                 flag = False
                                 if keyboard(): continue
                                 if keyboard_d[1]:
                                     print('You really want change password?')
-                                    time.sleep(0.2)
+                                    time.sleep(timer)
                                     while True:
                                         if keyboard(): continue
                                         if keyboard_d[1]:
@@ -190,11 +192,11 @@ def program_check ():
                                             data_dump_ll = data
                                             data = 0
                                             print('Length of password - ' + str(num))
-                                            time.sleep(0.2)
+                                            time.sleep(timer)
                                             while True:
                                                 if keyboard(): continue
 
-                                                time.sleep(0.2)
+                                                time.sleep(timer)
                                                 if keyboard_d[2]:
                                                     num += 1
                                                     print('Length of password - ' + str(num))
@@ -227,17 +229,17 @@ def program_check ():
  
 def program_add():
     # отвечает за вбивание новых паролей, нужна клава
-    global data
+    global data, timer
     data_dump = data
     print('Generate password')
     data = 1
-    time.sleep(0.2)
+    time.sleep(timer)
     while True:
         if keyboard(): continue
         if data == 4: data = 1
         if data == 0: data = 3
 
-        time.sleep(0.2)
+        time.sleep(timer)
 
         if data == 1:
             print('Generate password')
@@ -265,17 +267,17 @@ def program_add():
 
 def program_delete():
     # отвечает за удаление паролей, нужна клава
-    global ram_passwords, data
+    global ram_passwords, data, timer
     data_dump = data
     print('Delete passwords?')
     data = 2
-    time.sleep(0.2)
+    time.sleep(timer)
     while True:
         if keyboard(): continue
         if data == 4: data = 2
         if data == 1: data = 3
 
-        time.sleep(0.2)
+        time.sleep(timer)
 
         if data == 2:
             print('Delete passwords?')
@@ -291,11 +293,11 @@ def program_delete():
                     cheker += 1
                 name = reader(data)[0]
                 print(name)
-                time.sleep(0.2)
+                time.sleep(timer)
                 while True:
                     if keyboard(): continue
 
-                    time.sleep(0.2)
+                    time.sleep(timer)
 
                     if data == cheker + 1:
                         data = 0
@@ -306,7 +308,7 @@ def program_delete():
                         print('Exit?')
                         if keyboard_d[1]:
                             print('Delete passwords?')
-                            time.sleep(0.2)
+                            time.sleep(timer)
                             break
 
                     if data != cheker:
@@ -321,11 +323,11 @@ def program_delete():
                                 print('Deleted success')
                                 data = data_dump_l
                                 print('Delete passwords?')
-                                time.sleep(0.2)
+                                time.sleep(timer)
                                 break
                             else:
                                 print(name)
-                                time.sleep(0.2)
+                                time.sleep(timer)
                                 continue
 
 
@@ -363,7 +365,7 @@ while True:
         if keyboard_d[1]:
             starter(data)
 
-        time.sleep(0.2)
+        time.sleep(timer)
         print(info[data])
 
 
